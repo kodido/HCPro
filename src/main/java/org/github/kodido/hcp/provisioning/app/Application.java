@@ -1,4 +1,4 @@
-package io.kodido.templates.reactive.spring.admin.app;
+package org.github.kodido.hcp.provisioning.app;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

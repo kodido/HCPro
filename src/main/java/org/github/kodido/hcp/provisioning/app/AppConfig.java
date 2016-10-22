@@ -1,12 +1,12 @@
-package io.kodido.templates.reactive.spring.admin.app;
+package org.github.kodido.hcp.provisioning.app;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan( {
-        "<controllers>",
-        "<services>"
+        "org.github.kodido.hcp.provisioning.api",
+        "org.github.kodido.hcp.provisioning.services.impl"
 } )
 public class AppConfig {
 }

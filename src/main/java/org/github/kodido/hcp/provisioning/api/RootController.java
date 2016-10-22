@@ -1,4 +1,4 @@
-package io.kodido.templates.reactive.spring.admin.api;
+package org.github.kodido.hcp.provisioning.api;
 
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resource;
@@ -11,7 +11,6 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 
 @RestController
-@RequestMapping(value = "/")
 public class RootController {
 
 
@@ -24,11 +23,14 @@ public class RootController {
 
     public Resource<String> getIndex() {
         Resource<String> result = new Resource<>("API Root");
-//
-//        Object databases = methodOn(Controller.class).getDatabases();
-//        Link databasesLink = linkTo(databases).withRel("link");
-//
+
+//        TODO: check why spring hateoas is not working with this
+//        Object databases = methodOn(DatabaseController.class).getDatabases();
+//        Link databasesLink = linkTo(databases).withRel("databases");
 //        result.add(databasesLink);
+
+        result.add(new Link("/databases", "databases"));
+        result.add(new Link("/"));
 
         return result;
     }
